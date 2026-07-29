@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101a35" />
+    <title>Nexora Business Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="dashboard.css?v=9" />
+  </head>
+  <body>
+    <div class="app-layout">
+      <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">N</span>
+          <span class="brand-copy">NEXORA<small>BUSINESS SUITE</small></span>
+        </div>
+
+        <nav class="navigation">
+          <p class="nav-label">Workspace</p>
+          <a class="nav-item active" href="dashboard.html" aria-current="page">
+            <span class="nav-icon">⌂</span><span>Dashboard</span>
+          </a>
+          <a class="nav-item" href="customers.html">
+            <span class="nav-icon">♙</span><span>Customers</span>
+          </a>
+          <a class="nav-item" href="leads.html">
+            <span class="nav-icon">◎</span><span>Leads</span>
+          </a>
+          <a class="nav-item" href="projects.html">
+            <span class="nav-icon">◇</span><span>Projects</span>
+          </a>
+          <a class="nav-item" href="tasks.html">
+            <span class="nav-icon">✓</span><span>Tasks</span>
+            <span class="nav-badge">8</span>
+          </a>
+          <p class="nav-label">Insights</p>
+          <a class="nav-item" href="insights.html">
+            <span class="nav-icon">◌</span><span>Insights</span>
+          </a>
+          <a class="nav-item" href="reports.html">
+            <span class="nav-icon">⌁</span><span>Reports</span>
+          </a>
+          <a class="nav-item" href="settings.html">
+            <span class="nav-icon">⚙</span><span>Settings</span>
+          </a>
+        </nav>
+
+      </aside>
+
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+      <main class="main-content" id="dashboard">
+        <header class="top-header">
+          <div class="header-left">
+            <button class="icon-button menu-button" id="menuButton" aria-label="Open navigation" aria-expanded="false">
+              <span></span><span></span><span></span>
+            </button>
+            <div>
+              <p class="eyebrow">Tuesday, 28 July</p>
+              <h1>Business Overview</h1>
+            </div>
+          </div>
+          <div class="header-actions">
+            <button class="icon-button notification-button" id="notificationButton" aria-label="Notifications" aria-expanded="false">
+              <span aria-hidden="true">♢</span><span class="notification-dot"></span>
+            </button>
+            <button class="profile profile-button" id="profileButton" aria-label="Open profile menu" aria-expanded="false">
+              <span class="avatar">KA</span>
+              <span class="profile-copy"><strong>Kautuk Ade</strong><small>Administrator</small></span>
+              <span class="profile-chevron" aria-hidden="true">⌄</span>
+            </button>
+            <div class="header-popover notification-popover" id="notificationPopover">
+              <div class="popover-heading"><strong>Notifications</strong><button id="markNotificationsRead">Mark all read</button></div>
+              <div class="notification-item unread"><span>◎</span><div><strong>New lead assigned</strong><small>BluePeak Foods · 12 min ago</small></div></div>
+              <div class="notification-item unread"><span>✓</span><div><strong>Task due today</strong><small>Review homepage wireframes</small></div></div>
+              <div class="notification-item"><span>◇</span><div><strong>Project updated</strong><small>Analytics Dashboard · 2 hrs ago</small></div></div>
+            </div>
+            <div class="header-popover profile-popover" id="profilePopover">
+              <div class="profile-card"><span class="avatar large">KA</span><div><strong>Kautuk Ade</strong><small>connect@itcyber.in</small><span class="online-status">● Available</span></div></div>
+              <button class="popover-action" id="viewProfileAction"><span>♙</span><span><strong>My profile</strong><small>View personal information</small></span></button>
+              <a class="popover-action" href="settings.html"><span>⚙</span><span><strong>Account settings</strong><small>Preferences and security</small></span></a>
+              <button class="popover-action danger" id="signOutAction"><span>↪</span><span><strong>Sign out</strong><small>End this demo session</small></span></button>
+            </div>
+          </div>
+        </header>
+
+        <div class="dashboard-content">
+          <section class="welcome-section" aria-labelledby="welcomeTitle">
+            <div>
+              <p class="section-kicker">PERFORMANCE CENTER</p>
+              <h2 id="welcomeTitle">Good afternoon, Kautuk.</h2>
+              <p>Here’s what’s happening with your business today.</p>
+            </div>
+            <button class="primary-button" id="dashboardAddProject"><span>＋</span> Add project</button>
+          </section>
+
+          <section class="summary-grid" id="summaryCards" aria-label="Business summary"></section>
+
+          <section class="dashboard-grid">
+            <article class="panel performance-panel">
+              <div class="panel-header">
+                <div>
+                  <p class="section-kicker">ANALYTICS</p>
+                  <h2>Monthly performance</h2>
+                </div>
+                <select id="performancePeriod" aria-label="Performance period">
+                  <option value="sixMonths">Last 6 months</option>
+                  <option value="year">This year</option>
+                  <option value="quarter">This quarter</option>
+                </select>
+              </div>
+              <div class="chart-metrics">
+                <div><span class="legend-dot revenue"></span><small>Revenue</small><strong id="revenueValue">₹8.42L</strong></div>
+                <div><span class="legend-dot target"></span><small>Target</small><strong id="targetValue">₹9.00L</strong></div>
+                <span class="growth-pill" id="growthValue">↗ 12.8%</span>
+              </div>
+              <div class="chart-wrap" aria-label="Revenue trend chart">
+                <div class="y-axis"><span>2L</span><span>1.5L</span><span>1L</span><span>50K</span><span>0</span></div>
+                <div class="chart">
+                  <div class="grid-lines"><i></i><i></i><i></i><i></i><i></i></div>
+                  <svg viewBox="0 0 640 220" role="img" aria-label="Revenue rises from February to July">
+                    <defs>
+                      <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#5b61e6" stop-opacity=".28"/>
+                        <stop offset="100%" stop-color="#5b61e6" stop-opacity="0"/>
+                      </linearGradient>
+                    </defs>
+                    <path class="area" id="chartArea" d="M8 181 C60 167 88 152 116 160 S188 137 224 130 S295 110 330 118 S404 80 438 90 S512 49 546 62 S606 25 632 30 L632 220 L8 220 Z"/>
+                    <path class="line target-line" id="targetPath" d="M8 156 C120 146 185 132 224 120 S320 107 330 99 S420 85 438 75 S540 64 632 45"/>
+                    <path class="line revenue-line" id="revenuePath" d="M8 181 C60 167 88 152 116 160 S188 137 224 130 S295 110 330 118 S404 80 438 90 S512 49 546 62 S606 25 632 30"/>
+                    <g class="points">
+                      <circle cx="8" cy="181" r="5"/><circle cx="116" cy="160" r="5"/><circle cx="224" cy="130" r="5"/>
+                      <circle cx="330" cy="118" r="5"/><circle cx="438" cy="90" r="5"/><circle cx="546" cy="62" r="5"/><circle cx="632" cy="30" r="5"/>
+                    </g>
+                  </svg>
+                  <div class="x-axis" id="chartLabels"><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="panel activities-panel">
+              <div class="panel-header">
+                <div><p class="section-kicker">LIVE FEED</p><h2>Recent activities</h2></div>
+                <button class="text-button" id="viewAllActivities" aria-label="View all activities">View all</button>
+              </div>
+              <div class="activities-list" id="activitiesList"></div>
+            </article>
+          </section>
+
+          <section class="panel projects-panel" id="projects">
+            <div class="projects-heading">
+              <div><p class="section-kicker">WORKSPACE</p><h2>Recent projects</h2></div>
+              <div class="project-tools">
+                <label class="search-box">
+                  <span aria-hidden="true">⌕</span>
+                  <input id="projectSearch" type="search" placeholder="Search projects..." autocomplete="off" />
+                </label>
+                <select id="statusFilter" aria-label="Filter projects by status">
+                  <option value="All">All status</option>
+                  <option value="In Progress">In Progress</option>
+                  <option value="Completed">Completed</option>
+                  <option value="On Hold">On Hold</option>
+                </select>
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Project</th><th>Client</th><th>Progress</th><th>Deadline</th><th>Status</th><th aria-label="Actions"></th></tr></thead>
+                <tbody id="projectsTableBody"></tbody>
+              </table>
+              <div class="empty-state" id="emptyState" hidden>No projects match your search.</div>
+            </div>
+            <div class="table-footer"><span id="projectCount"></span><button class="text-button" id="viewAllProjects">View all projects →</button></div>
+          </section>
+          <footer>© 2026 Nexora Business Suite <span>Secure workspace · Last synced just now</span></footer>
+        </div>
+      </main>
+    </div>
+    <script src="dashboard.js?v=9" defer></script>
+  </body>
+</html>
