@@ -7,7 +7,7 @@ No React, Bootstrap, Tailwind CSS or other frontend framework is used.
 ## Live Links
 
 - **GitHub:** [prathmesh8889/-n8n-Web-Dashboard](https://github.com/prathmesh8889/-n8n-Web-Dashboard)
-- **Live Demo:** [Add your Netlify URL here](https://majestic-tapioca-fe7e2a.netlify.app/dashboard.html)
+- **Live Demo:** [[Add your Netlify URL here](https://majestic-tapioca-fe7e2a.netlify.app/dashboard.html](https://simple-db-prathmesh.netlify.app/))
 
 ## Screenshots
 
